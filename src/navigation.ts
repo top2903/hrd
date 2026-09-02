@@ -12,11 +12,12 @@ export const headerData = {
 
 export const footerData = {
   links: [],
-  secondaryLinks: [
-    { text: '首页', href: getPermalink('/') },
-    { text: '博客', href: getBlogPermalink() },
-    { text: '关于', href: getPermalink('/about') },
-  ],
+ secondaryLinks: [
+  { text: '首页', href: getPermalink('/') },
+  { text: '博客', href: getBlogPermalink() },
+  { text: '分类', href: getPermalink('/blog/category') },
+  { text: '关于', href: getPermalink('/about') },
+],
   socialLinks: [
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     // 按需添加社交链接，示例：
