@@ -1,1 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+// 获取所有已发布的文章（过滤草稿）
+const posts = await getCollection('post', ({ data }) => !data.draft);
+// 提取所有非空分类并去重
+const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))];
+
+const metadata = {
+  title: '文章分类 — 数智人心',
+  description: '数智人心博客所有文章分类导航',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="container mx-auto px-4 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">文章分类</h1>
+      <p class="text-gray-600 dark:text-gray-300">
+        共 {categories.length} 个分类，{posts.length} 篇文章
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {categories.map(category => {
+        const count = posts.filter(p => p.data.category === category).length;
+        return (
+          <a
+            href={`/blog/category/${category}`}
+            class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300"
+          >
+            <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              {category}
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400">
+              {count} 篇文章
+            </p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</Layout>
 
