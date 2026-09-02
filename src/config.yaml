@@ -1,72 +1,70 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: 数智人心
+  site: 'https://www.shrmcn.top'
   base: '/'
   trailingSlash: false
-
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
-# Default SEO metadata
+# 默认 SEO 元数据
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 数智人心 —— 数字化时代的人力资源管理随笔与研究手记
+    template: '%s — 数智人心'
+  description: "在算法与数据之外看见组织里的人，记录一位研究者的人力资源数字化观察笔记"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 数智人心
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: ''
+    site: ''
     cardType: summary_large_image
 
+# 国际化设置
 i18n:
-  language: en
+  language: zh-CN
   textDirection: ltr
 
+# 应用功能配置
 apps:
   blog:
     isEnabled: true
     postsPerPage: 6
-
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
+      permalink: '/blog/%slug%'
+      isRelatedPostsEnabled: true
+      relatedPostsCount: 4
+    categories:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
+      pathname: category
+    tags:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
+      pathname: tag
 
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
+# 顶部导航菜单
+nav:
+  - text: 首页
+    link: '/'
+  - text: 博客
+    link: '/blog'
+  - text: 分类
+    link: '/blog/category'
+  - text: 关于
+    link: '/about'
 
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
-
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
-
+# 界面主题设置
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: system
+  enableAnimations: true
+  showScrollProgress: true
+
+# 页脚信息
+footer:
+  copyright: '© 2026 数智人心. All rights reserved.'
