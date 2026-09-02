@@ -48,16 +48,7 @@ apps:
       isEnabled: true
       pathname: tag
 
-# 顶部导航菜单
-nav:
-  - text: 首页
-    link: '/'
-  - text: 博客
-    link: '/blog'
-  - text: 分类
-    link: '/blog/category'
-  - text: 关于
-    link: '/about'
+
 
 # 界面主题设置
 ui:
