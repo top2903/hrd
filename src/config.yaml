@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: 数智人心
+  site: 'https://www.shrmcn.top'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 数智人心 —— 数字化时代的人力资源管理随笔与研究手记
+    template: '%s — 数智人心'
+  description: "在算法与数据之外看见组织里的人，记录一位研究者的人力资源数字化观察笔记"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 数智人心
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -28,7 +28,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: zh-CN
   textDirection: ltr
 
 apps:
@@ -38,8 +38,9 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
+      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+    
+    robots:
         index: true
 
     list:
