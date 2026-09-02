@@ -116,3 +116,14 @@
   margin-top: 0;
 }
 
+/* 页面整体背景：浅灰蓝，比纯白更柔和 */
+body {
+  background-color: #f0f4f8 !important;
+  color: #1f2937 !important;
+}
+
+/* 深色模式下保持舒适深色 */
+.dark body {
+  background-color: #121826 !important;
+  color: #e5e7eb !important;
+}
